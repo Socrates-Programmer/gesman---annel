@@ -3715,13 +3715,15 @@ textarea:disabled {
   color: #1f4e97;
 }
 
+@media (max-width: 1660px) {
+  .buses-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1440px) {
   .buses-kpi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .buses-main-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -4303,13 +4305,15 @@ textarea:disabled {
   color: #1f4e97;
 }
 
+@media (max-width: 1660px) {
+  .orders-main-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1440px) {
   .orders-kpi-grid-v2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .orders-main-grid-v2 {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -4868,13 +4872,15 @@ textarea:disabled {
   color: #1f4e97;
 }
 
+@media (max-width: 1660px) {
+  .maintenance-main-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1440px) {
   .maintenance-kpi-grid-v2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .maintenance-main-grid-v2 {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -5556,13 +5562,15 @@ textarea:disabled {
   color: #1f4e97;
 }
 
+@media (max-width: 1660px) {
+  .reports-main-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1440px) {
   .reports-kpi-grid-v2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .reports-main-grid-v2 {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -5603,5 +5611,307 @@ textarea:disabled {
   .reports-detail-grid-v2 > div {
     grid-template-columns: 1fr;
     gap: 0.15rem;
+  }
+}
+
+/* Responsive overflow guard */
+html,
+body,
+#root {
+  max-width: 100%;
+}
+
+.route-content,
+.dashboard-route,
+.dashboard-route-v2,
+.module-grid-main-pro,
+.dashboard-main-grid-v2,
+.buses-main-grid,
+.orders-main-grid-v2,
+.maintenance-main-grid-v2,
+.reports-main-grid-v2,
+.panel {
+  min-width: 0;
+}
+
+@media (max-width: 1220px) {
+  .app-shell,
+  .app-shell.sidebar-collapsed {
+    grid-template-columns: 1fr;
+  }
+
+  .app-main {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 25;
+    width: min(28rem, 84vw);
+    min-height: auto;
+    grid-template-rows: auto;
+    overflow-y: auto;
+    transform: translateX(-105%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 220ms ease, opacity 180ms ease;
+  }
+
+  .app-shell.sidebar-open .app-sidebar {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .app-shell.sidebar-collapsed .app-sidebar {
+    padding: 2rem 1.6rem;
+    gap: 2rem;
+  }
+
+  .app-sidebar {
+    width: min(33rem, 92vw);
+    padding: 1.35rem 1.1rem;
+    gap: 1.2rem;
+  }
+
+  .sidebar-brand-mark {
+    grid-template-columns: 4.3rem minmax(0, 1fr);
+    gap: 0.68rem;
+    align-items: center;
+  }
+
+  .sidebar-brand-logo {
+    max-width: 4.3rem;
+  }
+
+  .main-nav {
+    margin-top: 1.1rem;
+    grid-template-columns: 1fr;
+    gap: 0.56rem;
+  }
+
+  .nav-item {
+    min-width: 0;
+    grid-template-columns: 2.05rem minmax(0, 1fr);
+    padding: 0.88rem 0.94rem;
+    font-size: clamp(1.24rem, 0.5vw + 1rem, 1.44rem);
+    line-height: 1.24;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-team-list li {
+    flex-wrap: wrap;
+  }
+
+  .dashboard-team-list span {
+    white-space: normal;
+  }
+
+  .dashboard-upcoming-list li {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .dashboard-upcoming-list li span {
+    white-space: normal;
+  }
+
+  .recent-list-pro li {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-list-pro time {
+    white-space: normal;
+  }
+
+  .buses-detail-hero,
+  .orders-detail-hero-v2,
+  .maintenance-detail-hero-v2,
+  .reports-detail-hero-v2 {
+    grid-template-columns: minmax(8.8rem, 10.8rem) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.9rem;
+    max-width: 42rem;
+    margin-inline: auto;
+  }
+
+  .buses-detail-vehicle-visual,
+  .orders-detail-icon-v2,
+  .maintenance-detail-icon-v2,
+  .reports-detail-icon-v2 {
+    width: 100%;
+    max-width: 10.8rem;
+    min-height: 9.8rem;
+    justify-self: center;
+  }
+
+  .buses-detail-grid > div,
+  .orders-detail-grid-v2 > div,
+  .maintenance-detail-grid-v2 > div,
+  .reports-detail-grid-v2 > div {
+    grid-template-columns: minmax(8rem, 40%) minmax(0, 1fr);
+    gap: 0.3rem 0.6rem;
+    align-items: center;
+  }
+
+  .buses-detail-grid dt,
+  .orders-detail-grid-v2 dt,
+  .maintenance-detail-grid-v2 dt,
+  .reports-detail-grid-v2 dt {
+    grid-column: 1;
+    margin: 0;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .buses-detail-grid dd,
+  .orders-detail-grid-v2 dd,
+  .maintenance-detail-grid-v2 dd,
+  .reports-detail-grid-v2 dd {
+    grid-column: 2;
+    justify-self: end;
+    text-align: right;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.reports-detail-card-v2 .reports-detail-hero-v2 {
+  grid-template-columns: clamp(8.8rem, 11vw, 13.8rem) minmax(0, 1fr) !important;
+  align-items: center;
+  column-gap: clamp(0.45rem, 2.2vw, 2.2rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.reports-detail-card-v2 .reports-detail-icon-v2 {
+  width: 100%;
+  max-width: clamp(8.6rem, 11vw, 11rem);
+  min-height: clamp(8.8rem, 10vw, 10.8rem);
+  justify-self: center;
+}
+
+.reports-detail-card-v2 .reports-detail-grid-v2 {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.reports-detail-card-v2 .reports-detail-grid-v2 > div {
+  display: grid;
+  grid-template-columns: clamp(7.2rem, 10vw, 10.4rem) minmax(0, 1fr) !important;
+  row-gap: 0.22rem;
+  column-gap: clamp(0.4rem, 1.3vw, 1.15rem);
+  align-items: baseline;
+}
+
+.reports-detail-card-v2 .reports-detail-grid-v2 dt {
+  grid-column: 1;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.reports-detail-card-v2 .reports-detail-grid-v2 dd {
+  grid-column: 2;
+  margin: 0;
+  justify-self: end;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.buses-detail-card .buses-detail-hero,
+.orders-detail-card-v2 .orders-detail-hero-v2,
+.maintenance-detail-card-v2 .maintenance-detail-hero-v2 {
+  grid-template-columns: clamp(8.8rem, 11vw, 13.8rem) minmax(0, 1fr) !important;
+  align-items: center;
+  column-gap: clamp(0.45rem, 2.2vw, 2.2rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.buses-detail-card .buses-detail-vehicle-visual,
+.orders-detail-card-v2 .orders-detail-icon-v2,
+.maintenance-detail-card-v2 .maintenance-detail-icon-v2 {
+  width: 100%;
+  max-width: clamp(8.6rem, 11vw, 11rem);
+  min-height: clamp(8.8rem, 10vw, 10.8rem);
+  justify-self: center;
+}
+
+.buses-detail-card .buses-detail-grid,
+.orders-detail-card-v2 .orders-detail-grid-v2,
+.maintenance-detail-card-v2 .maintenance-detail-grid-v2 {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.buses-detail-card .buses-detail-grid > div,
+.orders-detail-card-v2 .orders-detail-grid-v2 > div,
+.maintenance-detail-card-v2 .maintenance-detail-grid-v2 > div {
+  display: grid;
+  grid-template-columns: clamp(7.2rem, 10vw, 10.4rem) minmax(0, 1fr) !important;
+  row-gap: 0.22rem;
+  column-gap: clamp(0.4rem, 1.3vw, 1.15rem);
+  align-items: baseline;
+}
+
+.buses-detail-card .buses-detail-grid dt,
+.orders-detail-card-v2 .orders-detail-grid-v2 dt,
+.maintenance-detail-card-v2 .maintenance-detail-grid-v2 dt {
+  grid-column: 1;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.buses-detail-card .buses-detail-grid dd,
+.orders-detail-card-v2 .orders-detail-grid-v2 dd,
+.maintenance-detail-card-v2 .maintenance-detail-grid-v2 dd {
+  grid-column: 2;
+  margin: 0;
+  justify-self: end;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1660px) {
+  .buses-detail-card,
+  .orders-detail-card-v2,
+  .maintenance-detail-card-v2,
+  .reports-detail-card-v2 {
+    padding: clamp(2.3rem, 1.2vw + 1.45rem, 3.1rem);
+  }
+
+  .buses-detail-body,
+  .orders-detail-body-v2,
+  .maintenance-detail-body-v2,
+  .reports-detail-body-v2 {
+    gap: clamp(0.65rem, 0.55vw, 0.95rem);
+  }
+
+  .buses-detail-grid,
+  .orders-detail-grid-v2,
+  .maintenance-detail-grid-v2,
+  .reports-detail-grid-v2 {
+    gap: clamp(0.16rem, 0.42vw, 0.34rem);
+  }
+
+  .buses-detail-card .buses-detail-grid > div,
+  .orders-detail-card-v2 .orders-detail-grid-v2 > div,
+  .maintenance-detail-card-v2 .maintenance-detail-grid-v2 > div,
+  .reports-detail-card-v2 .reports-detail-grid-v2 > div {
+    column-gap: clamp(0.34rem, 0.95vw, 0.82rem);
   }
 }

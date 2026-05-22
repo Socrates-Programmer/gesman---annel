@@ -14,18 +14,20 @@ import WorkOrdersPage from "./pages/WorkOrdersPage";
 import { fetchSession, logout } from "./data/authApi";
 import { useEffect, useMemo, useState } from "react";
 
+const COMPACT_LAYOUT_QUERY = "(max-width: 1220px)";
+
 function ProtectedLayout({ onLogout, username }) {
   const [isCompactLayout, setIsCompactLayout] = useState(() => {
     if (typeof window === "undefined") {
       return false;
     }
-    return window.matchMedia("(max-width: 1220px)").matches;
+    return window.matchMedia(COMPACT_LAYOUT_QUERY).matches;
   });
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
     if (typeof window === "undefined") {
       return true;
     }
-    return !window.matchMedia("(max-width: 1220px)").matches;
+    return !window.matchMedia(COMPACT_LAYOUT_QUERY).matches;
   });
 
   useEffect(() => {
@@ -33,7 +35,7 @@ function ProtectedLayout({ onLogout, username }) {
       return undefined;
     }
 
-    const mediaQuery = window.matchMedia("(max-width: 1220px)");
+    const mediaQuery = window.matchMedia(COMPACT_LAYOUT_QUERY);
     const syncLayout = (event) => {
       const compact = event.matches;
       setIsCompactLayout(compact);
