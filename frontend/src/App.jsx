@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { NAV_LINKS } from "./data/dashboardData";
-import traeLogo from "./assets/Logo.png";
+import omsaLogo from "./assets/omsa-logo.png";
 import DashboardPage from "./pages/DashboardPage";
 import IncidentsPage from "./pages/IncidentsPage";
 import LoginPage from "./pages/LoginPage";
@@ -76,9 +76,9 @@ function ProtectedLayout({ onLogout, username }) {
       <aside id="app-sidebar" className="app-sidebar">
         <div className="sidebar-brand">
           <div className="sidebar-brand-mark">
-            <img className="sidebar-brand-logo" src={traeLogo} alt="GMI Buses" />
+            <img className="sidebar-brand-logo" src={omsaLogo} alt="OMSA" />
             <div className="sidebar-brand-text">
-              <strong>GMI BUSES</strong>
+              <strong>OMSA</strong>
               <span>Gestor de Mantenimiento e Incidencias</span>
             </div>
           </div>
@@ -94,7 +94,7 @@ function ProtectedLayout({ onLogout, username }) {
             Colapsar
           </button>
           <div className="sidebar-footer">
-            <p>&copy; 2026 GMI Buses</p>
+            <p>&copy; 2026 OMSA</p>
             <span>Version 0.0.1 - PRUEBA</span>
             <span>GNU GPLv3 - License ⚠️</span>
 

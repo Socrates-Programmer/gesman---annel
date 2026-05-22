@@ -5915,3 +5915,141 @@ body,
     column-gap: clamp(0.34rem, 0.95vw, 0.82rem);
   }
 }
+
+/* OMSA desktop branding */
+@media (min-width: 1221px) {
+  :root {
+    --canvas: #f3f5f7;
+    --canvas-soft: #ffffff;
+    --surface: #ffffff;
+    --surface-soft: #f3f5f7;
+    --line: #d6dee8;
+    --line-strong: #a8b3bf;
+    --text-main: #1f2f46;
+    --text-muted: #617286;
+    --blue-700: #0a4f93;
+    --blue-600: #0059a8;
+    --blue-500: #3d93d9;
+    --gold-500: #f2c300;
+    --gold-400: #f2c300;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 8% 0%, #ffffff 0%, transparent 36%),
+      radial-gradient(circle at 90% 12%, #eaf1fa 0%, transparent 34%),
+      linear-gradient(180deg, #ffffff 0%, #f3f5f7 100%);
+    color: var(--text-main);
+  }
+
+  .app-shell {
+    background: linear-gradient(180deg, #ffffff 0%, #f3f5f7 100%);
+  }
+
+  .app-sidebar {
+    background: #ffffff;
+    border-right: 1px solid #d6dee8;
+    color: #1f2f46;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 1.2rem;
+  }
+
+  .sidebar-brand-mark {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .sidebar-brand-logo {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .sidebar-brand-text strong {
+    font-size: 1.55rem;
+    color: #0a4f93;
+  }
+
+  .sidebar-brand-text span {
+    color: #617286;
+  }
+
+  .nav-item {
+    color: #1f2f46;
+  }
+
+  .nav-item:hover {
+    background: #f3f5f7;
+    border-color: #d6dee8;
+  }
+
+  .nav-item.active {
+    background: linear-gradient(135deg, #0059a8 0%, #0a4f93 100%);
+    box-shadow: 0 10px 16px rgba(10, 79, 147, 0.22);
+  }
+
+  .nav-item-icon {
+    color: #0a4f93;
+  }
+
+  .nav-item.active .nav-item-icon {
+    color: #ffffff;
+  }
+
+  .sidebar-lower {
+    border-top: 1px solid #d6dee8;
+  }
+
+  .sidebar-collapse-icon {
+    border-color: #d6dee8;
+    background: #f3f5f7;
+  }
+
+  .sidebar-footer p {
+    color: #5f6f83;
+  }
+
+  .sidebar-footer span {
+    color: #7b899b;
+  }
+
+  .top-header-title-group h1 {
+    color: #0a4f93;
+  }
+
+  .top-header-menu-btn,
+  .top-header-search,
+  .top-header-notification,
+  .top-header-user-card {
+    border-color: #d6dee8;
+    background: #ffffff;
+  }
+
+  .top-header-menu-btn,
+  .top-header-notification {
+    color: #0059a8;
+  }
+
+  .top-header-search svg {
+    stroke: #5f6f83;
+  }
+
+  .top-header-search input::placeholder {
+    color: #7b899b;
+  }
+
+  .top-header-user-avatar {
+    background: linear-gradient(135deg, #0059a8 0%, #0a4f93 100%);
+  }
+
+  .top-header-logout-link {
+    color: #0059a8;
+  }
+
+  .top-header-notification-badge {
+    background: #f2c300;
+    color: #1f2f46;
+  }
+}
+
